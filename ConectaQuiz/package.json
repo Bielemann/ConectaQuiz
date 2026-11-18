@@ -1,0 +1,14 @@
+{
+  "name": "quiz-chat-node",
+  "version": "1.0.0",
+  "description": "Aplicação web de quiz e chat em tempo real com Node.js e WebSockets",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}

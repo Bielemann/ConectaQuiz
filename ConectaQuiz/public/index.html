@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="ConectaQuiz — aprenda, responda e compartilhe conhecimento.">
+  <title>ConectaQuiz — Conhecimento em conexão</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <main class="container">
+    <nav class="topbar" aria-label="Preferências">
+      <a class="brand-mini" href="#top"><span class="brand-mark">CQ</span> CONECTAQUIZ</a>
+      <div class="toolbar">
+        <button id="sound-toggle" class="icon-button" type="button" aria-pressed="true" title="Desativar efeitos sonoros"><span id="sound-icon">♫</span><span class="toolbar-label">Som ligado</span></button>
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Ativar tema claro" title="Alternar tema"><span id="theme-icon">☼</span><span class="toolbar-label">Tema claro</span></button>
+      </div>
+    </nav>
+
+    <header id="top" class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse-dot"></span> APRENDA • RESPONDA • EVOLUA</span>
+        <h1>Conecta<span>Quiz</span><span class="title-period">.</span></h1>
+        <p>Conhecimento que conecta pessoas e transforma ideias.</p>
+      </div>
+      <div class="hero-orbit" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit-core">CQ</div><span class="orbit-node node-a">✦</span><span class="orbit-node node-b">⌘</span><span class="orbit-node node-c">↗</span></div>
+    </header>
+
+    <section class="panel identity-panel">
+      <div class="identity-avatar" id="identity-avatar">?</div>
+      <div class="identity-fields"><label for="username">Como podemos chamar você?</label><input id="username" maxlength="24" placeholder="Digite seu nome" autocomplete="name"></div>
+      <span id="connection" class="status"><i></i> Conectando...</span>
+    </section>
+
+    <section class="panel quiz-panel">
+      <div class="section-heading">
+        <div><span class="eyebrow">DESAFIO DO DIA</span><h2>Tecnologia e informação</h2></div>
+        <span class="tag"><span>✦</span> QUIZ #01</span>
+      </div>
+      <div class="question-meta"><span id="question-progress"><span class="meta-icon">◷</span> Pergunta 1 de 5</span><span><span class="meta-icon">◎</span> Conhecimento geral</span></div>
+      <p class="question" id="question-text">Qual atitude é mais importante ao compartilhar uma informação recebida nas redes sociais?</p>
+      <div id="answers" class="answers">
+        <button class="answer" type="button"><span class="answer-letter">A</span><span>Compartilhar imediatamente para alertar todos.</span><span class="answer-arrow">↗</span></button>
+        <button class="answer" type="button"><span class="answer-letter">B</span><span>Verificar a fonte e confirmar a informação em fontes confiáveis.</span><span class="answer-arrow">↗</span></button>
+        <button class="answer" type="button"><span class="answer-letter">C</span><span>Confiar na informação quando ela tiver muitas curtidas.</span><span class="answer-arrow">↗</span></button>
+        <button class="answer" type="button"><span class="answer-letter">D</span><span>Repassar se a mensagem vier de um conhecido.</span><span class="answer-arrow">↗</span></button>
+      </div>
+      <button id="next-question" class="next-question" type="button" hidden>Próxima pergunta <span>→</span></button>
+      <p id="quiz-feedback" class="feedback" aria-live="polite">Escolha uma alternativa para registrar sua resposta.</p>
+    </section>
+
+    <section class="panel results" id="results-section" hidden>
+      <div class="section-heading"><div><span class="eyebrow">VISÃO DA COMUNIDADE</span><h2>Resultados do desafio</h2></div><span id="response-total" class="tag">0 respostas</span></div>
+      <div class="results-grid">
+        <div class="chart-card"><div class="chart-title"><h3>Acertos x erros do quiz</h3><span>RESULTADO FINAL</span></div><div class="chart-content"><div id="results-pie" class="pie-chart" role="img" aria-label="Gráfico com a distribuição das respostas"><span class="chart-center"><strong id="chart-total">0</strong><small>respostas</small></span></div><div id="chart-legend" class="legend"></div></div></div>
+      </div>
+      <div class="ranking-block"><div class="subheading"><div><span class="eyebrow">TOP PARTICIPANTES</span><h3>Ranking da comunidade</h3></div><span class="ranking-cup">♛</span></div><ol id="ranking-list" class="ranking-list"><li class="no-participants">O ranking aparecerá após as primeiras respostas.</li></ol></div>
+      <div class="voters-wrap"><h3 class="participants-title">Lista de todos os participantes</h3><ul id="participants" class="participants-list"><li class="no-participants">Ninguém respondeu ainda.</li></ul></div>
+    </section>
+
+    <section class="panel chat-panel">
+      <div class="section-heading"><div><span class="eyebrow">TROQUE IDEIAS</span><h2>Comunidade</h2></div><span class="tag online"><span class="pulse-dot"></span> AO VIVO</span></div>
+      <p class="chat-intro">Compartilhe sua opinião com quem também está aprendendo.</p>
+      <div id="messages" class="messages" aria-live="polite"><p class="empty">Carregando comentários...</p></div>
+      <form id="chat-form" class="chat-form"><input id="message-input" maxlength="500" placeholder="Escreva um comentário..." autocomplete="off" required><button type="submit"><span>Enviar</span><b>↗</b></button></form>
+      <p class="hint">Comentários e respostas ficam salvos no armazenamento configurado no servidor.</p>
+    </section>
+    <footer><span class="footer-mark">CQ</span><span>ConectaQuiz</span><span class="footer-separator">•</span><span>Conhecimento em conexão</span><span class="footer-copy">Node.js + WebSockets</span></footer>
+  </main>
+  <script src="app.js?v=20261118-5"></script>
+</body>
+</html>
